@@ -1,0 +1,119 @@
+ERROR [2020-10-12 18:37:00] E:\腾讯蓝鲸学习\mengdo-text\margan-text\blueking\component\base.py 73 _call 3948 720 
+ 	 Error occurred when requesting method=GET url=https://paas-class.bktencent.com/api/c/compapi/v2/bk_login/get_user/ 
+Traceback (most recent call last):
+  File "C:\Users\Administrator\.virtualenvs\margan-text\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "C:\Users\Administrator\.virtualenvs\margan-text\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "C:\Users\Administrator\.virtualenvs\margan-text\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\.virtualenvs\margan-text\lib\site-packages\urllib3\connectionpool.py", line 677, in urlopen
+    chunked=chunked,
+  File "C:\Users\Administrator\.virtualenvs\margan-text\lib\site-packages\urllib3\connectionpool.py", line 381, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\Administrator\.virtualenvs\margan-text\lib\site-packages\urllib3\connectionpool.py", line 978, in _validate_conn
+    conn.connect()
+  File "C:\Users\Administrator\.virtualenvs\margan-text\lib\site-packages\urllib3\connection.py", line 309, in connect
+    conn = self._new_conn()
+  File "C:\Users\Administrator\.virtualenvs\margan-text\lib\site-packages\urllib3\connection.py", line 172, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x0000021E862E64E0>: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\.virtualenvs\margan-text\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Users\Administrator\.virtualenvs\margan-text\lib\site-packages\urllib3\connectionpool.py", line 727, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "C:\Users\Administrator\.virtualenvs\margan-text\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='paas-class.bktencent.com', port=443): Max retries exceeded with url: /api/c/compapi/v2/bk_login/get_user/?bk_app_code=morgan-text&bk_token=CG42hAnc5OOZLIE2ePOPHt-grOE1pz4a6PkqTu0iczk&bk_app_secret=e4e33ad7-b561-4d63-a8c2-182f70153fc4 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000021E862E64E0>: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\腾讯蓝鲸学习\mengdo-text\margan-text\blueking\component\base.py", line 70, in _call
+    resp = self.client.request(self.method, self.url, params=params, data=data)
+  File "E:\腾讯蓝鲸学习\mengdo-text\margan-text\blueking\component\client.py", line 100, in request
+    headers=headers, **kwargs)
+  File "C:\Users\Administrator\.virtualenvs\margan-text\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\Administrator\.virtualenvs\margan-text\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\Administrator\.virtualenvs\margan-text\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\Administrator\.virtualenvs\margan-text\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='paas-class.bktencent.com', port=443): Max retries exceeded with url: /api/c/compapi/v2/bk_login/get_user/?bk_app_code=morgan-text&bk_token=CG42hAnc5OOZLIE2ePOPHt-grOE1pz4a6PkqTu0iczk&bk_app_secret=e4e33ad7-b561-4d63-a8c2-182f70153fc4 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000021E862E64E0>: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。',))
+ERROR [2020-10-12 18:37:00] E:\腾讯蓝鲸学习\mengdo-text\margan-text\blueking\component\base.py 43 __call__ 3948 720 
+ 	 Request component error, Exception: HTTPSConnectionPool(host='paas-class.bktencent.com', port=443): Max retries exceeded with url: /api/c/compapi/v2/bk_login/get_user/?bk_app_code=morgan-text&bk_token=CG42hAnc5OOZLIE2ePOPHt-grOE1pz4a6PkqTu0iczk&bk_app_secret=e4e33ad7-b561-4d63-a8c2-182f70153fc4 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000021E862E64E0>: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。',))
+url=https://paas-class.bktencent.com/api/c/compapi/v2/bk_login/get_user/ 
+Traceback (most recent call last):
+  File "C:\Users\Administrator\.virtualenvs\margan-text\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "C:\Users\Administrator\.virtualenvs\margan-text\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "C:\Users\Administrator\.virtualenvs\margan-text\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\.virtualenvs\margan-text\lib\site-packages\urllib3\connectionpool.py", line 677, in urlopen
+    chunked=chunked,
+  File "C:\Users\Administrator\.virtualenvs\margan-text\lib\site-packages\urllib3\connectionpool.py", line 381, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\Administrator\.virtualenvs\margan-text\lib\site-packages\urllib3\connectionpool.py", line 978, in _validate_conn
+    conn.connect()
+  File "C:\Users\Administrator\.virtualenvs\margan-text\lib\site-packages\urllib3\connection.py", line 309, in connect
+    conn = self._new_conn()
+  File "C:\Users\Administrator\.virtualenvs\margan-text\lib\site-packages\urllib3\connection.py", line 172, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x0000021E862E64E0>: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\.virtualenvs\margan-text\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Users\Administrator\.virtualenvs\margan-text\lib\site-packages\urllib3\connectionpool.py", line 727, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "C:\Users\Administrator\.virtualenvs\margan-text\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='paas-class.bktencent.com', port=443): Max retries exceeded with url: /api/c/compapi/v2/bk_login/get_user/?bk_app_code=morgan-text&bk_token=CG42hAnc5OOZLIE2ePOPHt-grOE1pz4a6PkqTu0iczk&bk_app_secret=e4e33ad7-b561-4d63-a8c2-182f70153fc4 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000021E862E64E0>: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\腾讯蓝鲸学习\mengdo-text\margan-text\blueking\component\base.py", line 70, in _call
+    resp = self.client.request(self.method, self.url, params=params, data=data)
+  File "E:\腾讯蓝鲸学习\mengdo-text\margan-text\blueking\component\client.py", line 100, in request
+    headers=headers, **kwargs)
+  File "C:\Users\Administrator\.virtualenvs\margan-text\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\Administrator\.virtualenvs\margan-text\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\Administrator\.virtualenvs\margan-text\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\Administrator\.virtualenvs\margan-text\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='paas-class.bktencent.com', port=443): Max retries exceeded with url: /api/c/compapi/v2/bk_login/get_user/?bk_app_code=morgan-text&bk_token=CG42hAnc5OOZLIE2ePOPHt-grOE1pz4a6PkqTu0iczk&bk_app_secret=e4e33ad7-b561-4d63-a8c2-182f70153fc4 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000021E862E64E0>: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\腾讯蓝鲸学习\mengdo-text\margan-text\blueking\component\base.py", line 35, in __call__
+    return self._call(*args, **kwargs)
+  File "E:\腾讯蓝鲸学习\mengdo-text\margan-text\blueking\component\base.py", line 74, in _call
+    raise ComponentAPIException(self, u'Request component error, Exception: %s' % str(e))
+blueking.component.exceptions.ComponentAPIException: Request component error, Exception: HTTPSConnectionPool(host='paas-class.bktencent.com', port=443): Max retries exceeded with url: /api/c/compapi/v2/bk_login/get_user/?bk_app_code=morgan-text&bk_token=CG42hAnc5OOZLIE2ePOPHt-grOE1pz4a6PkqTu0iczk&bk_app_secret=e4e33ad7-b561-4d63-a8c2-182f70153fc4 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000021E862E64E0>: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。',))
+ERROR [2020-10-12 18:37:00] E:\腾讯蓝鲸学习\mengdo-text\margan-text\blueapps\account\components\bk_token\backends.py 145 get_user_info 3948 720 
+ 	 Failed to Get User Info: error=Request component error, Exception: HTTPSConnectionPool(host='paas-class.bktencent.com', port=443): Max retries exceeded with url: /api/c/compapi/v2/bk_login/get_user/?bk_app_code=morgan-text&bk_token=CG42hAnc5OOZLIE2ePOPHt-grOE1pz4a6PkqTu0iczk&bk_app_secret=e4e33ad7-b561-4d63-a8c2-182f70153fc4 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000021E862E64E0>: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。',)), ret=None 
+
